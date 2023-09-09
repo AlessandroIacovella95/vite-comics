@@ -189,6 +189,9 @@ export default {
           </ul>
         </div>
       </div>
+      <div class="container_right">
+        <img src="/dc-logo-bg.png" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -233,16 +236,20 @@ li:last-child img {
   align-items: center;
   text-decoration: none;
   color: white;
+  z-index: 5;
 }
 
 .container_center_footer {
   background-image: url("/footer-bg.jpg");
+  background-size: cover;
+  position: relative;
 }
 
 .container_center {
   padding-bottom: 40px;
   margin: 0 15%;
   display: flex;
+  justify-content: space-between;
 }
 
 h3 {
@@ -263,5 +270,12 @@ h3 {
 .container_left {
   display: flex;
   gap: 4rem;
+}
+
+.container_right img {
+  width: 450px;
+  position: absolute;
+  bottom: 0px;
+  right: 140px;
 }
 </style>
