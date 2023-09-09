@@ -10,7 +10,9 @@ export default {
 
 <template>
   <div class="wrapper">
-    <AppHeader />
+    <header>
+      <AppHeader />
+    </header>
   </div>
 </template>
 

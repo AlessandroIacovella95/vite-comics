@@ -60,14 +60,16 @@ export default {
 </script>
 
 <template>
-  <header>
-    <div class="container_header">
-      <img class="logo" src="../../public/dc-logo.png" alt="logo" />
-      <ul>
-        <li v-for="link in links">{{ link.text }}</li>
-      </ul>
-    </div>
-  </header>
+  <div class="container_header">
+    <img class="logo" src="/dc-logo.png" alt="logo" />
+    <ul>
+      <li v-for="link in links">
+        <a :href="link.url" :class="link.current ? 'active' : ''">
+          {{ link.text }}
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -90,5 +92,15 @@ ul {
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  color: #0c7cec;
+  border-bottom: 2px solid #0c7cec;
 }
 </style>
