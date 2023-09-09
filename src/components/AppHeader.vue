@@ -74,7 +74,7 @@ export default {
 
 <style lang="scss" scoped>
 .container_header {
-  margin-top: 1.5rem;
+  margin: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

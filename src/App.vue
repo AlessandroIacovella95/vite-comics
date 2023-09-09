@@ -1,7 +1,7 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
-import AppMain from "./components/AppHeader.vue";
-import AppFooter from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
+import AppFooter from "./components/AppFooter.vue";
 
 export default {
   components: { AppHeader, AppMain, AppFooter },
@@ -9,11 +9,12 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <header>
-      <AppHeader />
-    </header>
-  </div>
+  <header>
+    <AppHeader />
+  </header>
+  <main>
+    <AppMain />
+  </main>
 </template>
 
 <style lang="scss">
@@ -23,7 +24,11 @@ export default {
   padding: 0;
 }
 
-.wrapper {
+header {
   margin: 0 15%;
+}
+
+main {
+  background-color: black;
 }
 </style>
