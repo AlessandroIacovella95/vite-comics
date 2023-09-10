@@ -270,7 +270,7 @@ span {
 }
 
 .container_top li:last-child img {
-  width: 65px;
+  width: 60px;
 }
 
 .container_top a {
