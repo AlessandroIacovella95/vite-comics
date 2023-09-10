@@ -137,6 +137,33 @@ export default {
           url: "#",
         },
       ],
+      socials: [
+        {
+          name: "facebook",
+          image: "footer-facebook.png",
+          url: "#",
+        },
+        {
+          name: "twitter",
+          image: "footer-twitter.png",
+          url: "#",
+        },
+        {
+          name: "youtube",
+          image: "footer-youtube.png",
+          url: "#",
+        },
+        {
+          name: "pinterest",
+          image: "footer-pinterest.png",
+          url: "#",
+        },
+        {
+          name: "periscope",
+          image: "footer-periscope.png",
+          url: "#",
+        },
+      ],
     };
   },
 };
@@ -194,6 +221,21 @@ export default {
       </div>
     </div>
   </div>
+  <div class="container_bottom_footer">
+    <div class="container_bottom">
+      <div class="sign_up">SIGN-UP NOW</div>
+      <div class="icon_social">
+        <h3>FOLLOW US</h3>
+        <ul>
+          <li v-for="social in socials">
+            <a :href="social.url"
+              ><img :src="social.image" :alt="social.name"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -223,11 +265,11 @@ span {
   white-space: nowrap;
 }
 
-li img {
+.container_top li img {
   width: 45px;
 }
 
-li:last-child img {
+.container_top li:last-child img {
   width: 65px;
 }
 
@@ -236,7 +278,6 @@ li:last-child img {
   align-items: center;
   text-decoration: none;
   color: white;
-  z-index: 5;
 }
 
 .container_center_footer {
@@ -277,5 +318,51 @@ h3 {
   position: absolute;
   bottom: 0px;
   right: 140px;
+}
+.container_bottom_footer {
+  background-color: #303030;
+  height: 100px;
+}
+
+.container_bottom {
+  height: 100%;
+  margin: 0 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon_social {
+  display: flex;
+  align-items: center;
+}
+
+.icon_social ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.icon_social img {
+  width: 30px;
+}
+
+.sign_up {
+  white-space: nowrap;
+  width: 130px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 3px solid #0c7cec;
+  color: white;
+  cursor: pointer;
+}
+
+.icon_social h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0c7cec;
+  padding: 0;
+  margin: 0 15px;
 }
 </style>

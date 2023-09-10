@@ -82,6 +82,7 @@ export default {
 
 .logo {
   width: 70px;
+  cursor: pointer;
 }
 
 ul {
