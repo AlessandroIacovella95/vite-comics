@@ -56,6 +56,14 @@ export default {
       ],
     };
   },
+
+  methods: {
+    toggleCurrent(index) {
+      this.links.forEach((link, i) => {
+        link.current = i == index;
+      });
+    },
+  },
 };
 </script>
 
@@ -63,8 +71,15 @@ export default {
   <div class="container_header">
     <img class="logo" src="/dc-logo.png" alt="logo" />
     <ul>
-      <li v-for="link in links">
-        <a :href="link.url" :class="link.current ? 'active' : ''">
+      <li
+        v-for="(link, index) in links"
+        :class="{ active_border: link.current }"
+      >
+        <a
+          :href="link.url"
+          @click="toggleCurrent(index)"
+          :class="{ active: link.current }"
+        >
           {{ link.text }}
         </a>
       </li>
@@ -74,7 +89,6 @@ export default {
 
 <style lang="scss" scoped>
 .container_header {
-  margin: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -82,6 +96,7 @@ export default {
 
 .logo {
   width: 70px;
+  padding-top: 7px;
   cursor: pointer;
 }
 
@@ -93,6 +108,7 @@ ul {
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 70px;
+  padding-top: 8px;
 }
 
 a {
@@ -102,6 +118,9 @@ a {
 
 .active {
   color: #0c7cec;
-  border-bottom: 2px solid #0c7cec;
+}
+
+.active_border {
+  border-bottom: 4px solid #0c7cec;
 }
 </style>
