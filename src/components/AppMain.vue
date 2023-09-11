@@ -101,6 +101,9 @@ export default {
     <img src="/jumbotron.jpg" alt="" />
   </div>
   <div class="cards_container">
+    <div class="current">
+      <span>CURRENT SERIES</span>
+    </div>
     <AppCards v-for="(card, index) in cards" :key="index" :card="card" />
   </div>
   <div class="button_comics">
@@ -109,8 +112,28 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+  width: 200px;
+  color: white;
+  background-color: #0c7cec;
+  cursor: pointer;
+
+  padding: 8px 15px;
+  position: absolute;
+  top: -81px;
+  left: 50px;
+  span {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
 .jumbtron {
   height: 320px;
+  margin-bottom: 50px;
   img {
     height: 100%;
     width: 100%;
@@ -119,6 +142,8 @@ export default {
   }
 }
 .cards_container {
+  position: relative;
+
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
