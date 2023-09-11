@@ -33,5 +33,6 @@ header {
 
 main {
   background-color: black;
+  padding-bottom: 20px;
 }
 </style>
