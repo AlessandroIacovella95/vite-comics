@@ -1,24 +1,32 @@
 <script>
+import AppCards from "./AppCards.vue";
+import json from "../../dc-comics.json";
+
 export default {
+  components: {
+    AppCards,
+  },
   data() {
-    return {};
+    return {
+      cards: json,
+    };
   },
 };
 </script>
 
 <template>
-  <div class="container_main">
-    <h2>&LeftArrow; Content goes here &rightarrow;</h2>
+  <div class="cards_container">
+    <AppCards v-for="(card, index) in cards" :key="index" :card="card" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.container_main {
-  margin: 0 15%;
+.cards_container {
   display: flex;
-  align-items: center;
-  color: white;
-  background-color: black;
-  height: 180px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 20px 0;
+  margin: 0 15%;
 }
 </style>
