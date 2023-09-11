@@ -104,7 +104,12 @@ export default {
     <div class="current">
       <span>CURRENT SERIES</span>
     </div>
-    <AppCards v-for="(card, index) in cards" :key="index" :card="card" />
+    <AppCards
+      v-for="(card, index) in cards"
+      :key="index"
+      :thumb="card.thumb"
+      :series="card.series"
+    />
   </div>
   <div class="button_comics">
     <span>LOAD MORE</span>
